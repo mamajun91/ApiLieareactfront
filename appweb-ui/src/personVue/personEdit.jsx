@@ -17,10 +17,10 @@ function PersonEdit() {
       } catch (err) {
         console.error(err);
         if (err?.status === 404) {
-          setError("❌ Personne introuvable (404). Retour à la liste dans quelques instants.");
+          setError(" Personne introuvable (404). Retour à la liste dans quelques instants.");
           setTimeout(() => navigate('/persons'), 3000);
         } else {
-          setError("❌ Impossible de charger la personne.");
+          setError("Impossible de charger la personne.");
         }
       }
     }
@@ -38,7 +38,7 @@ function PersonEdit() {
     e.preventDefault();
 
     if (person.firstName.length < 2 || person.lastName.length < 2) {
-      setError("⚠️ Prénom et nom doivent avoir au moins 2 caractères.");
+      setError("Prénom et nom doivent avoir au moins 2 caractères.");
       return;
     }
 
@@ -47,7 +47,8 @@ function PersonEdit() {
       navigate("/persons"); // retour à la liste
     } catch (err) {
       console.error(err);
-      setError("❌ Erreur lors de la sauvegarde.");
+      setError("
+Erreur lors de la sauvegarde.");
     }
   };
 
