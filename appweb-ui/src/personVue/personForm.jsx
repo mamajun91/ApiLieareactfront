@@ -19,14 +19,14 @@ function PersonForm() {
 
     try {
       await savePerson({ firstName, lastName });
-      setMessage("✅ Personne créée avec succès !");
+      setMessage("Personne créée avec succès !");
       setError(null);
 
       // retour auto à la liste après 2s
       setTimeout(() => navigate("/persons"), 2000);
     } catch (err) {
       console.error(err);
-      setError("❌ Une erreur est survenue lors de la création.");
+      setError("Une erreur est survenue lors de la création.");
       setMessage(null);
     }
   };
